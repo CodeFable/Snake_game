@@ -1,0 +1,59 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary-color: rgb(28, 28, 28);
+    --text-primary-color: rgb(225, 222, 222);
+}
+
+
+/* Body Styling */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serifz;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    padding: 40px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    row-gap: 20px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score h3 {
+    border: 1px solid rgba(128, 128, 128, 0.583);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+
+.board {
+    border: 1px solid rgba(128, 128, 128, 0.583);
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30px , 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(30px , 1fr));
+}
+
+.block {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.583);
+}
