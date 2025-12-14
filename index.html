@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
+
+
+
         <section>
             <div class="top-header">
 
@@ -17,18 +21,39 @@
                     <h3>High Score <span>0</span></h3>
                 </div>
 
-                <div class="score game-score">
-                    <h3>Score: <span>0</span></h3>
+                <div class="score ">
+                    <h3>Score: <span class="game-score">0</span></h3>
                 </div>
 
                 <div class="score time">
                     <h3>Time: <span>00</span></h3>
+
                 </div>
 
+                <div class="icons">
+                    <i class='bx  bxs-play' id="play-btn"></i>
+                    <i class='bx  bxs-pause' id="pause-btn"></i>
+                </div>
             </div>
+
             <div class="board">
             </div>
+
         </section>
+
+        <section id="modal">
+            <a class="close-modal"><i class='bx  bxs-x'></i></a>  
+            <div class="box">
+                <h3>Game Over!</h3>
+                <button class="btn" id="restart-btn">Restart</button>
+            </div>
+        </section>
+        <section id="startmodal">
+            <div class="box">
+                <button class="btn" id="start-btn">Start</button>
+            </div>
+        </section>
+
     </main>
 
     <script src="script.js"></script>

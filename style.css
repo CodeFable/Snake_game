@@ -17,6 +17,15 @@ body {
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
     padding: 40px;
+    overflow: hidden;
+}
+
+.fill {
+    background: rgb(250, 0, 0);
+}
+
+.food {
+    background: rgb(43, 219, 20);
 }
 
 main {
@@ -48,12 +57,94 @@ section {
     border: 1px solid rgba(128, 128, 128, 0.583);
     height: 80vh;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(30px , 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(30px , 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
 }
 
 .block {
     width: 30px;
     height: 30px;
     border: 1px solid rgba(128, 128, 128, 0.583);
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons i {
+    font-size: 3vw;
+}
+
+#pause-btn {
+    display: none;
+}
+
+#modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: rgba(37, 37, 37, 0.163);
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+.bxs-x{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    font-size:3vw ;
+}
+#startmodal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: rgba(37, 37, 37, 0.163);
+    backdrop-filter: blur(10px);
+}
+
+.box {
+    width: 500px;
+    height: 250px;
+    background: rgb(131, 130, 130);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.box h3 {
+    font-size: 2.5vw;
+}
+
+.btn {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.speeding{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.speeding a{
+    cursor: pointer;
+    gap: 10px;
+    font-size: 2vw;
 }
