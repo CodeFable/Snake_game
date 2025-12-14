@@ -67,11 +67,7 @@ section {
     border: 1px solid rgba(128, 128, 128, 0.583);
 }
 
-.time {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .icons i {
     font-size: 3vw;

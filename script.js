@@ -8,6 +8,8 @@ const startBtn = document.getElementById('start-btn');
 const closeModal = document.querySelector('.close-modal')
 
 const gamescore = document.querySelector('.game-score');
+const gamehighscore = document.querySelector('.high-score');
+const time = document.querySelector('.time');
 
 const blockWidth = 30;
 const blockHeight = 30;
@@ -17,11 +19,15 @@ const rows = Math.floor(board.clientHeight / blockHeight);
 let speed = 150;
 let intervalClearing = null;
 let score = 0;
+let highScore = localStorage.getItem("highScore") || 0;
+let gametime = `00-00`;
 let food = { x: Math.floor(Math.random() * columns), y: Math.floor(Math.random() * rows) };
 let blocks = {};
 let snake = [{ x: Math.floor(columns / 2), y: Math.floor(rows / 2) }];
 let direction = 'right';
 let head = null;
+
+gamehighscore.innerText= highScore;
 
 // CREATE GRID
 for (let row = 0; row < rows; row++) {
@@ -63,6 +69,11 @@ function render() {
         snake.unshift(head);
         score++;
         gamescore.innerText = score;
+        if(score>highScore){
+            highScore = score
+            localStorage.setItem("highScore", highScore)
+        }
+
     } else {
         snake.pop();
         snake.unshift(head);
@@ -87,8 +98,18 @@ startBtn.addEventListener('click', () => {
 
 
 // PLAY / PAUSE BUTTONS
-playBuutton.addEventListener("click", () => { resetInterval(); playBuutton.style.display = "none"; pauseBuutton.style.display = "block"; });
-pauseBuutton.addEventListener("click", () => { clearInterval(intervalClearing); playBuutton.style.display = "block"; pauseBuutton.style.display = "none"; });
+playBuutton.addEventListener("click", () => {
+    resetInterval();
+    playBuutton.style.display = "none";
+    pauseBuutton.style.display = "block";
+});
+
+pauseBuutton.addEventListener("click", () => {
+    clearInterval(intervalClearing);
+    playBuutton.style.display = "block";
+    pauseBuutton.style.display = "none";
+
+});
 
 // RESTART BUTTON
 restartBuutton.addEventListener("click", restartGame);
